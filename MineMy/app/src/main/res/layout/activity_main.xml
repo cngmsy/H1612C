@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dell.minemy.MainActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.youth.banner.Banner
+            android:id="@+id/roll"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <com.example.dell.minemy.ExpandListView
+            android:id="@+id/re"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Hello World!" />
+    </LinearLayout>
+
+</ScrollView>

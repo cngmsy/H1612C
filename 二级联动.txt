@@ -1,0 +1,25 @@
+粘性标题列表
+
+StickyListHeadersListView
+
+使用方法
+
+1，依赖		compile 'se.emilsjolander:stickylistheaders:2.7.0'
+
+2，布局		在布局里加入StickyListHeadersListView控件
+
+3，编写代码	使用方法和ListView差不多，就是adapter里面多实现了一个StickyListHeadersAdapter接口
+		重写了两个方法getHeaderView（）和getHeaderId（）
+		getHeaderView（）就是添加粘性标题的方法，getHeaderId（）是获取这个标题内容的脚标值（索引）
+
+4，二级联动	让左边的item的position和右边StickyListHeadersListView的标题的脚标值对应
+		其每个标题的内容的脚标值也要对应
+		然后对左边的ListView设置item的点击事件监听
+		对右边的StickyListHeadersListView设置滑动监听
+		当点击左边item的时候让右边相对应的标题以及其内容显示
+		右边滑动的时候判断标题和内容的角标值，和左边item的position对比，滑动到那一条让那一条变色
+		这样就实现了二级联动
+
+加减号		思路：修改数据源
+		在Adapter里对加号减号按钮设置监听回掉的接口，设置Tag，值为position
+		并且在adapter里进行判断，如果textView里面的值不为空，则让减号和TextView显示，否则隐藏
